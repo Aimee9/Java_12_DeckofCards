@@ -13,8 +13,9 @@ public class App {
 
         get("/", (request, response) -> {
           HashMap<String, Object> model = new HashMap<String, Object>();
-
-
+          Deck deck = new Deck();
+          Card randomCard = deck.makeRandomCard();
+          model.put("randomCard", randomCard);
           model.put("template", "templates/index.vtl");
           return new ModelAndView(model, layout);
         }, new VelocityTemplateEngine());

@@ -1,4 +1,5 @@
 import java.util.ArrayList;
+import java.util.Random;
 
 class Deck {
   private static final String[] SUITS = {"Hearts", "Spades", "Diamonds", "Clubs"};
@@ -15,5 +16,12 @@ public Deck() {
          mCard.add(newCard);
        }
      }
+   }
+
+   public Card makeRandomCard(){
+     Random myRandomGenerator = new Random();
+     Integer randomCardIndex = myRandomGenerator.nextInt(51);
+     Card randomCard = mCard.get(randomCardIndex);
+     return randomCard;
    }
 }

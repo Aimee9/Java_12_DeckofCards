@@ -1,11 +1,10 @@
-
+import java.util.Random;
 
 
 
 public class Card {
   private  String mSuit;
   private  String mValue;
-
 
 
   public Card(String suit, String value) {
@@ -21,8 +20,9 @@ public class Card {
     return mValue;
   }
 
-  public String name() {
+  public String getName() {
     return String.format("%s of %s", mValue, mSuit);
   }
+
 
 }
