@@ -21,8 +21,14 @@ public class Card {
   }
 
   public String getName() {
-    return String.format("%s of %s", mValue, mSuit);
+    return String.format("%s of %s with ", mValue, mSuit);
   }
 
+  public Integer getCardPoints(){
+    Integer randomCardPoints = Deck.scores.get(mValue);
+    System.out.println("randomCardPoints");
+    return randomCardPoints;
+
+  }
 
 }
