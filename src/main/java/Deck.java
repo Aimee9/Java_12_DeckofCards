@@ -9,12 +9,6 @@ class Deck {
   public static HashMap<String, Integer> scores = new HashMap<String, Integer>();
 
 
-  // private static final String[] VALUES = {"Ace", "Two", "Three", "Four", "Five", "Six",
-  //                           "Seven", "Eight", "Nine", "Ten", "Jack", "Queen", "King"};
-
-
-
-
 public Deck() {
 
   mCard = new ArrayList<Card>();
@@ -43,15 +37,6 @@ public Deck() {
        }
      }
    }
-
-
-  //  public String getValueRandomCard(Card randomCard){
-  //    System.out.println("random card" + randomCard);
-  //    String randomCardValue = randomCard.getValue();
-  //    System.out.println("random card value" + randomCardValue);
-  //    return randomCardValue;
-  //  }
-
 
    public Card makeRandomCard(){
      Random myRandomGenerator = new Random();

@@ -1,5 +1,4 @@
-import java.util.Map;
-import java.util.HashMap;
+import java.util.*;
 import spark.ModelAndView;
 import spark.template.velocity.VelocityTemplateEngine;
 import static spark.Spark.*;
@@ -14,8 +13,18 @@ public class App {
         get("/", (request, response) -> {
           HashMap<String, Object> model = new HashMap<String, Object>();
           Deck deck = new Deck();
-          Card randomCard = deck.makeRandomCard();
-          model.put("randomCard", randomCard);
+
+          int i = 0;
+          ArrayList randomCards = new ArrayList<Card>();
+          while (i < 5 ){
+            Card randomCard = deck.makeRandomCard();
+            randomCards.add(randomCard);
+            i++;
+          }
+
+          Collections.sort(randomCards);
+          model.put("randomCards", randomCards);
+
           model.put("template", "templates/index.vtl");
           return new ModelAndView(model, layout);
         }, new VelocityTemplateEngine());

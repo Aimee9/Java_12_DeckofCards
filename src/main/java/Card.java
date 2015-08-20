@@ -1,7 +1,5 @@
 import java.util.Random;
 
-
-
 public class Card {
   private  String mSuit;
   private  String mValue;
@@ -26,7 +24,7 @@ public class Card {
 
   public Integer getCardPoints(){
     Integer randomCardPoints = Deck.scores.get(mValue);
-    System.out.println("randomCardPoints");
+    //System.out.println(randomCardPoints);
     return randomCardPoints;
 
   }
